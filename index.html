@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8">
+  <title>Treehouse Gallery Project</title>
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/mainstyle.css">
+	<link rel="stylesheet" type="text/css" href="lightbox2-master/css/lightbox.css">
+</head>
+<body>
+<div class="wrapper">
+			<input type="text" name="search" id="search" class="search" data-toggle="hideseek" data-list=".imglist a">
+			<ul class="imglist" id="images">
+            <!--used another lightbox plugin, the image list is organized in an array in order to better and fast insert images, uses innerHTML in a loop to populate li elements to the page-->
+<script>
+var images = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
+var des = ["Looks like its a field", "Is it Antartida?", "Looks like a grass field from Azores", "Maybe is it a Fiorde? Or an iceberg?", "Gran Canyon from The US?", "Algarve in Portugal? Are those pine tree?", "This looks like Canary Lake in the Azores", "The Autralian Desert? Its one of the most dangerous places on Earth", "Ok, now we are in Eden", "Looks like Ponta do Cintrão in the Azores", "Fanatstic View!", "Indian Plane in the US?"];
+
+for(i= 0; i < images.length; i ++){
+	var data = '<li><a href="photos/'+images[i] +'.jpg" data-lightbox="portfolio" title="'+ des[i]+'"data-title="'+des[i]+'"><img src="photos/Thumbnails/'+ images[i] +'.jpg" alt="'+ des[i]+'"></a></li>';
+document.getElementById('images').innerHTML += data;	
+}
+
+</script>
+		
+        </ul>
+		</div>
+	<script src="js/jquery-1.12.3.min.js"></script>
+	<script  src="lightbox2-master/js/lightbox.js"></script>
+	<script  src="js/jquery.hideseek.js"></script>
+</body>
+</html>
